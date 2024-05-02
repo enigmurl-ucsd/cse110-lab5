@@ -17,9 +17,9 @@ function init() {
 	hornPicker.addEventListener("change", e => {
 		const value = event.target.value;
 		image.src = "assets/images/" + value + ".svg";
-		console.log(value);
 
 		hornType = value;
+		audio.src = "assets/audio/" + value + ".mp3";
 	});
 
 	volume.addEventListener("input", e => {
@@ -36,13 +36,17 @@ function init() {
 		}
 
 		volumeImage.src = "assets/icons/" + name;
-		audio.volume = parseInt(name) / 100.0;
+		audio.volume = parseInt(value) / 100.0;
 	});
 
 
 	submit.onclick = () => {
-		audio.play();
-		jsConfetti.addConfetti();		
-	};
+		if (hornType !== "") {
+			audio.play();
 
+			if (hornType === "party-horn") {
+				jsConfetti.addConfetti();		
+			}
+		}
+	};
 }
