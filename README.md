@@ -1,4 +1,7 @@
 # Lab 5 - Starter
+## Links
+[expose](https://enigmurl-ucsd.github.io/cse110-lab5/expose.html)
+[explore](https://enigmurl-ucsd.github.io/cse110-lab5/explore)
 
 ## Contributors and Team Members
 Manu Bhat
