@@ -28,12 +28,14 @@ function init() {
 
 	button.onclick = () => {
 		const index = voiceSelect.value;
-		const utterThis = new SpeechSynthesisUtterance(text.value);
-		utterThis.voice = voices[index];
-		img.src = 'assets/images/smiling-open.png'
-		utterThis.addEventListener('end', () => {
-			img.src = 'assets/images/smiling.png'
-		});
-		synth.speak(utterThis);
+		if (index !== "select") {
+			const utterThis = new SpeechSynthesisUtterance(text.value);
+			utterThis.voice = voices[index];
+			img.src = 'assets/images/smiling-open.png'
+			utterThis.addEventListener('end', () => {
+				img.src = 'assets/images/smiling.png'
+			});
+			synth.speak(utterThis);
+		}
 	};
 }
